@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание по верстке</title>
+    <!-- Подключаем Barlow с fontsquirrel -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/barlow" />
+    <style>
+        body {
+            font-family: 'Barlow', sans-serif;
+            background-color: #EFF6FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #2A4A5C;
+        }
+        
+        .all {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            gap: 40px;
+            max-width: 1100px;
+            width: 100%;
+        }
+        
+        .image {
+            margin-top: 25px;
+            position: relative;
+            max-width: 800px;
+        }
+        
+        .image .bg {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+        
+        .image .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: auto;
+        }
+        
+        .registrationForm {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        .registrationForm h2 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .registrationForm p {
+            margin-bottom: 20px;
+            color: #7B8A92;
+        }
+        
+        .social-row {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 12px;
+            transition: filter 0.2s ease;
+        }
+        
+        .social-btn img {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .fb {
+            background-color: #255A9B;
+        }
+        
+        .in {
+            background-color: #0076B6;
+        }
+        
+        .fb-block,
+        .in-block {
+            width: 50%;
+        }
+        
+        .social-btn:hover {
+            filter: brightness(1.1);
+        }
+        
+        .or {
+            text-align: center;
+            margin: 15px 0;
+            color: #AFAFAF;
+        }
+        
+        .signUp label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .signUp input {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #96A5B1;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .signUp input:focus {
+            border-color: #3698FB;
+            outline: none;
+            box-shadow: 0 0 5px rgba(54, 152, 251, 0.4);
+        }
+        
+        .investorType h3 {
+            margin: 15px 0 5px;
+        }
+        
+        .investorType p {
+            font-size: 14px;
+            color: #7B8A92;
+            margin-bottom: 10px;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .radio-group input {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #96A5B1;
+            border-radius: 50%;
+            margin-right: 6px;
+            position: relative;
+            top: 3px;
+            cursor: pointer;
+        }
+        
+        .hint {
+            display: block;
+            margin-bottom: 0px;
+            color: #b4b0b0;
+        }
+        
+        .radio-group input:checked {
+            border-color: #3698FB;
+            background: radial-gradient(#3698FB 50%, transparent 51%);
+        }
+        
+        .radio-group label {
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 13px;
+            margin: 15px 0;
+            color: #7B8A92;
+        }
+        
+        .checkbox input {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #96A5B1;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+            top: 2px;
+        }
+        
+        .checkbox input:checked {
+            background-color: #3698FB;
+            border-color: #3698FB;
+        }
+        
+        .checkbox input:checked::after {
+            content: "✔";
+            color: white;
+            font-size: 12px;
+            position: absolute;
+            top: -1px;
+            left: 2px;
+        }
+        
+        .creating {
+            width: 100%;
+            padding: 12px;
+            background-color: #3698FB;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.2s ease;
+        }
+        
+        .creating:hover {
+            background-color: #2A7DE0;
+        }
+        
+        @media (max-width: 768px) {
+            .all {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .image img {
+                width: 80%;
+            }
+            .registrationForm {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+            .radio-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="image">
+            <img src="./img/logo.svg" alt="logo" class="logo">
+            <img src="./img/bg.jpg" alt="image" class="bg">
+        </div>
+
+        <div class="registrationForm">
+            <h2>Get iintoo it today</h2>
+            <p>There is no charge or obligation upon registration.</p>
+
+            <div class="social-row">
+                <div class="fb-block"><button class="social-btn fb">
+        <img src="./img/facebook.svg" alt="fc-image">Facebook</a>
+      </button></div>
+                <div class="in-block"> <button class="social-btn in">
+        <img src="./img/linkedin.svg" alt="in-image"> LinkedIn
+      </button></div>
+            </div>
+
+            <div class="or">or</div>
+
+            <div class="signUp">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="ivanivanov@gmail.com">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+0104342503">
+            </div>
+
+            <div class="investorType">
+                <h3>What type of investor are you?</h3>
+                <p>Select the type of investor you are below.</p>
+
+                <div class="radio-group">
+                    <label><input type="radio" name="account_type" value="individual" checked> Individual</label>
+                    <label><input type="radio" name="account_type" value="business">
+                    Business</label>
+                    <label><input type="radio" name="account_type" value="ira"> IRA</label>
+                    <label><input type="radio" name="account_type" value="trust"> Trust</label>
+                    <small class="hint">I am a natural person investing on my own behalf as a sole owner, joint tenant, or tenant in common.</small>
+
+                </div>
+            </div>
+
+            <label class="checkbox">
+      <input type="checkbox">
+      <span>I agree to the terms and receiving notifications from iintoo
+        <a href="#">View full terms</a></span>
+    </label>
+
+            <button class="creating">Create Account</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
