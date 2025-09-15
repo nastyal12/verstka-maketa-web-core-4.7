@@ -33,7 +33,7 @@
         .image {
             margin-top: 25px;
             position: relative;
-            max-width: 800px;
+            max-width: 500px;
         }
         
         .image .bg {
@@ -59,37 +59,38 @@
         }
         
         .registrationForm h2 {
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             font-weight: 600;
         }
         
         .registrationForm p {
-            margin-bottom: 20px;
+            margin-bottom: 60px;
             color: #7B8A92;
         }
         
         .social-row {
             display: flex;
-            gap: 10px;
+            gap: 14px;
         }
         
         .social-btn {
+            margin-bottom: 50px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-items: center;
             gap: 8px;
             padding: 12px;
             width: 100%;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             color: #fff;
             margin-bottom: 12px;
             transition: filter 0.2s ease;
         }
         
         .social-btn img {
+            margin-left: 0px;
             width: 16px;
             height: 16px;
         }
@@ -113,29 +114,38 @@
         
         .or {
             text-align: center;
-            margin: 15px 0;
+            margin: 30px 0px 30px 0px;
             color: #AFAFAF;
         }
         
-        .signUp label {
-            font-size: 14px;
-            margin-bottom: 5px;
-            display: block;
+        .signUp {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 30px;
         }
         
-        .signUp input {
+        .field {
+            position: relative;
             width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #96A5B1;
-            border-radius: 5px;
-            font-size: 14px;
         }
         
-        .signUp input:focus {
-            border-color: #3698FB;
-            outline: none;
-            box-shadow: 0 0 5px rgba(54, 152, 251, 0.4);
+        .field label {
+            position: absolute;
+            top: 4px;
+            left: 10px;
+            font-size: 14px;
+            color: #7B8A92;
+            background: #fff;
+            padding: 0 4px;
+            pointer-events: none;
+        }
+        
+        .field input {
+            width: 100%;
+            padding: 24px 12px 8px;
+            border: 1px solid #96A5B1;
+            border-radius: 4px;
+            font-size: 14px;
         }
         
         .investorType h3 {
@@ -169,6 +179,7 @@
         
         .hint {
             display: block;
+            margin-top: 0px;
             margin-bottom: 0px;
             color: #b4b0b0;
         }
@@ -180,6 +191,9 @@
         
         .radio-group label {
             font-size: 14px;
+            display: flex;
+            margin-bottom: 6px;
+            align-items: center;
             cursor: pointer;
         }
         
@@ -188,7 +202,7 @@
             align-items: flex-start;
             gap: 6px;
             font-size: 13px;
-            margin: 15px 0;
+            margin: 25px 0;
             color: #7B8A92;
         }
         
@@ -237,19 +251,25 @@
         
         @media (max-width: 768px) {
             .all {
-                flex-direction: column;
-                align-items: center;
                 padding: 20px;
+                overflow-x: auto;
+                gap: 20px;
             }
-            .image img {
-                width: 80%;
+            .image .bg {
+                width: 60%;
+            }
+            .image .logo {
+                width: 15%;
+                top: 10px;
+                left: 10px;
             }
             .registrationForm {
-                max-width: 100%;
+                max-width: 55%;
                 margin-top: 20px;
             }
             .radio-group {
                 flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -278,11 +298,15 @@
             <div class="or">or</div>
 
             <div class="signUp">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="ivanivanov@gmail.com">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="+0104342503">
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="konankita@gmail.com">
+                </div>
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="01043442503"></div>
             </div>
+
 
             <div class="investorType">
                 <h3>What type of investor are you?</h3>
@@ -310,5 +334,7 @@
     </div>
 
 </body>
+
+</html>
 
 </html>
