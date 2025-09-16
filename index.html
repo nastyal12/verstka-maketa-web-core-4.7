@@ -54,6 +54,7 @@
         .registrationForm {
             display: flex;
             flex-direction: column;
+            margin-left: 50px;
             max-width: 400px;
             width: 100%;
         }
@@ -70,19 +71,20 @@
         
         .social-row {
             display: flex;
-            gap: 14px;
+            gap: 24px;
         }
         
         .social-btn {
-            margin-bottom: 50px;
             display: flex;
             align-items: center;
-            justify-items: center;
+            position: relative;
+            justify-items: flex-start;
+            padding: 25px;
             gap: 8px;
-            padding: 12px;
             width: 100%;
             border: none;
             cursor: pointer;
+            padding-left: 50px;
             font-weight: 600;
             color: #fff;
             margin-bottom: 12px;
@@ -90,9 +92,16 @@
         }
         
         .social-btn img {
-            margin-left: 0px;
+            position: absolute;
+            left: 12px;
             width: 16px;
             height: 16px;
+        }
+        
+        .social-btn span {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .fb {
@@ -106,6 +115,7 @@
         .fb-block,
         .in-block {
             width: 50%;
+            margin-left: 0px;
         }
         
         .social-btn:hover {
@@ -288,10 +298,10 @@
 
             <div class="social-row">
                 <div class="fb-block"><button class="social-btn fb">
-        <img src="./img/facebook.svg" alt="fc-image">Facebook
+        <img src="./img/facebook.svg" alt="fc-image"><span>Facebook</span>
       </button></div>
                 <div class="in-block"> <button class="social-btn in">
-        <img src="./img/linkedin.svg" alt="in-image"> LinkedIn
+        <img src="./img/linkedin.svg" alt="in-image"> <span>LinkedIn</span>
       </button></div>
             </div>
 
