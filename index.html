@@ -261,25 +261,44 @@
         
         @media (max-width: 768px) {
             .all {
+                flex-direction: column;
                 padding: 20px;
-                overflow-x: auto;
-                gap: 20px;
+                align-items: center;
+                text-align: center;
+                ;
             }
             .image .bg {
-                width: 60%;
+                width: 100%;
+                height: auto;
             }
             .image .logo {
-                width: 15%;
-                top: 10px;
-                left: 10px;
+                width: 20%;
+                top: 15px;
+                left: 15px;
+            }
+            .registrationForm {
+                max-width: 80%;
+                margin-top: 15px;
+                display: flex;
+                gap: 15px;
+            }
+            .radio-group {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .all {
+                flex-direction: row;
+            }
+            .image .bg {
+                width: 100%;
+                height: auto;
             }
             .registrationForm {
                 max-width: 55%;
-                margin-top: 20px;
-            }
-            .radio-group {
-                flex-direction: column;
-                gap: 10px;
             }
         }
     </style>
@@ -305,7 +324,7 @@
       </button></div>
             </div>
 
-            <div class="or">or</div>
+            <div class="or">OR</div>
 
             <div class="signUp">
                 <div class="field">
